@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Arrays;
+
 public final class Logger {
     public static boolean isDebug = false;
     public static int currentLevel = 0;
@@ -9,7 +11,12 @@ public final class Logger {
 
     }
 
-    public static void log(Object aMessage) {
+    public static void log(String aMessage) {
+        Arrays.stream(aMessage.split("\n"))
+                        .forEach(Logger::logInternal);
+    }
+
+    private static void logInternal(Object aMessage) {
         for (int level = 0; level < currentLevel; level++) {
             System.out.print("  ");
         }

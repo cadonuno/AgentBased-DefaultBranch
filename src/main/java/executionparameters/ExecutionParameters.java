@@ -1,5 +1,6 @@
 package executionparameters;
 
+import selenium.WebDriverProvider;
 import util.ApiCredentials;
 import util.Logger;
 
@@ -65,6 +66,9 @@ public class ExecutionParameters {
         Logger.isDebugSelenium = Optional.ofNullable(parameterParser.getParameterAsString("--debug_selenium", "-ds"))
                 .filter("true"::equals)
                 .isPresent();
+        WebDriverProvider.isHeadless = Optional.ofNullable(parameterParser.getParameterAsString("--headless", "-headless"))
+                .map("true"::equals)
+                .orElse(true);
         return new ExecutionParameters(
                 new ApiCredentials(
                         parameterParser.getParameterAsString(VERACODE_ID_FULL_ARGUMENT, VERACODE_ID_SIMPLIFIED_ARGUMENT),

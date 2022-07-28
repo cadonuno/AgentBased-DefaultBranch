@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverProvider {
-    private static final boolean IS_HEADLESS = false;
+    public static boolean isHeadless = true;
     private static final String CHROME_DRIVER = "webdriver.chrome.driver";
     private static final String FIREFOX_DRIVER = "webdriver.gecko.driver";
 
@@ -23,13 +23,13 @@ public class WebDriverProvider {
 
     private static WebDriver getFirefoxDriver() {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.setHeadless(IS_HEADLESS);
+        firefoxOptions.setHeadless(isHeadless);
         return new FirefoxDriver(firefoxOptions);
     }
 
     private static WebDriver getChromeDriver() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        if (IS_HEADLESS) {
+        if (isHeadless) {
             chromeOptions.addArguments("--headless");
         }
         return new ChromeDriver(chromeOptions);
