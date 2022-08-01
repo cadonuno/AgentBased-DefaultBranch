@@ -66,7 +66,7 @@ public class ExecutionParameters {
         Logger.isDebugSelenium = Optional.ofNullable(parameterParser.getParameterAsString("--debug_selenium", "-ds"))
                 .filter("true"::equals)
                 .isPresent();
-        WebDriverProvider.isHeadless = Optional.ofNullable(parameterParser.getParameterAsString("--headless", "-headless"))
+        WebDriverProvider.isHeadless = Optional.ofNullable(parameterParser.getParameterAsString("--headless", "-h"))
                 .map("true"::equals)
                 .orElse(true);
         return new ExecutionParameters(
