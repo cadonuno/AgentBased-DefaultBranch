@@ -1,4 +1,4 @@
-# Agent-Based SCA - DefaultBranch setter:
+# Agent-Based SCA - Default Branch setter:
 This application will change the default branch of all projects visible to the current user
 
 ## Requirements:
