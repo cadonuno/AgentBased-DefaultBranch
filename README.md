@@ -12,7 +12,7 @@ This application will change the default branch of all projects visible to the c
 ## How to use:
 - Package the application using Maven
 - Call the jar by passing the required parameters
-- Example call: java -jar **jar-name** -vi **veracode-id** -vk **veracode-key** -vu **veracode-username* -vp **veracode-password** -dn **selenium-driver-name** -dl **Selenium-driver-location** -b **branch-name**
+- Example call: java -jar **jar-name** -vi **veracode-id** -vk **veracode-key** -vu **veracode-username** -vp **veracode-password** -dn **selenium-driver-name** -dl **Selenium-driver-location** -b **branch-name**
 
 ## Parameters:
 All parameters are mandatory
